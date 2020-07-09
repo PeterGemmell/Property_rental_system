@@ -29,20 +29,20 @@ public class Host {
     @Column(name="host_password")
     private String hostPassword;
 
-    @Column(name="host_username")
-    private String hostUsername;
+    @Column(name="host_user_name")
+    private String hostUserName;
 
     @JsonIgnoreProperties(value = "hosts")
     @OneToMany(mappedBy = "host", fetch = FetchType.LAZY)
     private List<Property> properties;
 
-    public Host(String hostFirstName, String hostLastName, String hostContactNumber, String hostEmail, String hostPassword, String hostUsername){
+    public Host(String hostFirstName, String hostLastName, String hostContactNumber, String hostEmail, String hostPassword, String hostUserName){
         this.hostFirstName = hostFirstName;
         this.hostLastName = hostLastName;
         this.hostContactNumber = hostContactNumber;
         this.hostEmail = hostEmail;
         this.hostPassword = hostPassword;
-        this.hostUsername = hostUsername;
+        this.hostUserName = hostUserName;
         this.properties = new ArrayList<Property>();
     }
 
@@ -91,11 +91,11 @@ public class Host {
     }
 
     public String getHostUsername() {
-        return hostUsername;
+        return hostUserName;
     }
 
-    public void setHostUsername(String hostUsername) {
-        this.hostUsername = hostUsername;
+    public void setHostUsername(String hostUserName) {
+        this.hostUserName = hostUserName;
     }
 
     public List<Property> getProperties() {

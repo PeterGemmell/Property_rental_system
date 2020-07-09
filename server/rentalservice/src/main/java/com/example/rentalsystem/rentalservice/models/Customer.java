@@ -20,6 +20,9 @@ public class Customer {
     @Column(name="customer_last_name")
     private String customerLastName;
 
+    @Column(name="customer_user_name")
+    private String customerUserName;
+
     @Column(name="customer_contact_number")
     private String customerContactNumber;
 
@@ -33,9 +36,10 @@ public class Customer {
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Customer(String customerFirstName, String customerLastName,String customerContactNumber, String customerEmail, String customerPassword){
+    public Customer(String customerFirstName, String customerLastName, String customerUserName, String customerContactNumber, String customerEmail, String customerPassword){
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
+        this.customerUserName = customerUserName;
         this.customerContactNumber = customerContactNumber;
         this.customerEmail = customerEmail;
         this.customerPassword = customerPassword;
@@ -56,6 +60,14 @@ public class Customer {
 
     public String getCustomerLastName() {
         return customerLastName;
+    }
+
+    public String getCustomerUserName() {
+        return customerUserName;
+    }
+
+    public void setCustomerUserName(String customerUserName) {
+        this.customerUserName = customerUserName;
     }
 
     public void setCustomerLastName(String customerLastName) {
