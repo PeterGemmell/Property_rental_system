@@ -1,4 +1,4 @@
 package com.example.rentalsystem.rentalservice.models;
 
-public class Admin {
+public class Host {
 }

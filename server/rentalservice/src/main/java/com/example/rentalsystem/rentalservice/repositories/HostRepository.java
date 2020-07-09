@@ -1,4 +1,4 @@
 package com.example.rentalsystem.rentalservice.repositories;
 
-public interface AdminRepository {
+public interface HostRepository {
 }
