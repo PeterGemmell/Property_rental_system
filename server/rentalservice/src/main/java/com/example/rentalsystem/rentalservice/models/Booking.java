@@ -21,9 +21,6 @@ public class Booking {
     @Column(name="customer_name")
     private String customerName;
 
-    @Column(name="booking_ref")
-    private String bookingRef;
-
     @Column(name="is_completed")
     private String isCompleted;
 
@@ -38,10 +35,9 @@ public class Booking {
     private Property property;
 
 
-    public Booking(String customerName, String bookingRef, String isCompleted, Customer customer, Property property){
+    public Booking(String customerName, String isCompleted, Customer customer, Property property){
         this.date = LocalDate.now();
         this.customerName = customerName;
-        this.bookingRef = bookingRef;
         this.isCompleted = isCompleted;
         this.customer = customer;
         this.property = property;
@@ -67,13 +63,6 @@ public class Booking {
         this.customerName = customerName;
     }
 
-    public String getBookingRef() {
-        return bookingRef;
-    }
-
-    public void setBookingRef(String bookingRef) {
-        this.bookingRef = bookingRef;
-    }
 
     public String getIsCompleted() {
         return isCompleted;
