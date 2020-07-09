@@ -32,23 +32,19 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @ManyToMany
-    @JoinTable(
-            name = "bookings_properties",
-            joinColumns = {@JoinColumn(name="booking_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="property_id", nullable = false, updatable = false)}
-    )
-
-    private List<Property> properties;
+    @JsonIgnoreProperties(value="bookings")
+    @ManyToOne
+    @JoinColumn(name = "property_id", nullable = false)
+    private Property property;
 
 
-    public Booking(String customerName, String bookingRef, String isCompleted, Customer customer){
+    public Booking(String customerName, String bookingRef, String isCompleted, Customer customer, Property property){
         this.date = LocalDate.now();
         this.customerName = customerName;
         this.bookingRef = bookingRef;
         this.isCompleted = isCompleted;
         this.customer = customer;
-        this.properties = new ArrayList<>();
+        this.property = property;
     }
 
     public Booking(){
@@ -95,11 +91,11 @@ public class Booking {
         this.customer = customer;
     }
 
-    public List<Property> getProperties() {
-        return properties;
+    public Property getProperty() {
+        return property;
     }
 
-    public void setProperties(List<Property> properties) {
-        this.properties = properties;
+    public void setProperty(Property property) {
+        this.property = property;
     }
 }
