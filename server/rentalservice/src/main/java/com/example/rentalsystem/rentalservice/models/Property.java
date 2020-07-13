@@ -68,6 +68,7 @@ public class Property {
 
     }
 
+
     public String getCountry() {
         return country;
     }

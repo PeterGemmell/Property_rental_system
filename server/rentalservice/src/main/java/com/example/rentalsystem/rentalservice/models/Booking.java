@@ -87,4 +87,7 @@ public class Booking {
     public void setProperty(Property property) {
         this.property = property;
     }
+
+    public void addBooking(Booking booking1) {
+    }
 }
