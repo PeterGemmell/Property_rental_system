@@ -58,9 +58,10 @@ public class DataLoader implements ApplicationRunner {
         propertyRepository.save(property4);
 
 
-        Booking booking1 = new Booking("Peter Gemmell", "no", customer1, property1);
+        Booking booking1 = new Booking("Peter Gemmell", "no", "BZ5423WE1", customer1, property1);
         bookingRepository.save(booking1);
         booking1.addBooking(booking1);
+
 
     }
 }

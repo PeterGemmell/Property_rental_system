@@ -24,6 +24,9 @@ public class Booking {
     @Column(name="is_completed")
     private String isCompleted;
 
+    @Column(name="booking_reference")
+    private String bookingReference;
+
     @JsonIgnoreProperties(value="bookings")
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -35,16 +38,25 @@ public class Booking {
     private Property property;
 
 
-    public Booking(String customerName, String isCompleted, Customer customer, Property property){
+    public Booking(String customerName, String isCompleted, String bookingReference, Customer customer, Property property){
         this.date = LocalDate.now();
         this.customerName = customerName;
         this.isCompleted = isCompleted;
+        this.bookingReference = bookingReference;
         this.customer = customer;
         this.property = property;
     }
 
     public Booking(){
 
+    }
+
+    public String getBookingReference() {
+        return bookingReference;
+    }
+
+    public void setBookingReference(String bookingReference) {
+        this.bookingReference = bookingReference;
     }
 
     public LocalDate getDate() {

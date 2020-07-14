@@ -25,6 +25,13 @@ public class BookingController {
         return new ResponseEntity<>(bookingRepository.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value= "/bookings/nameandbookingreference")
+    public ResponseEntity findByCustomerNameAndBookingReference(
+            @RequestParam(name = "customerName") String customerName,
+            @RequestParam(name = "bookingReference") String bookingReference){
+        return new ResponseEntity(bookingRepository.findByCustomerNameAndBookingReference(customerName, bookingReference), HttpStatus.OK);
+    }
+
     @PostMapping(value = "/bookings")
     public ResponseEntity<Booking> postBooking(@RequestBody Booking booking){
         bookingRepository.save(booking);
