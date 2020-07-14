@@ -9,7 +9,7 @@ public interface PropertyRepository extends JpaRepository<Property, Long> {
 
     Property findByCountryAndCity(String country, String city);
 
-    Property findByCityAndNumberOfGuests(String city, Integer numOfGuests);
+    Property findByCityAndNumOfGuests(String city, Integer numOfGuests);
 
     Property findByCityAndRating(String city, Integer rating);
 

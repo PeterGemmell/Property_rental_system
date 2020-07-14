@@ -34,10 +34,10 @@ public class PropertyController {
     }
 
     @GetMapping(value = "/properties/cityandguests")
-    public ResponseEntity findByCityAndNumberOfGuests(
+    public ResponseEntity findByCityAndNumOfGuests(
             @RequestParam(name = "city") String city,
             @RequestParam(name = "numOfGuests") Integer numOfGuests){
-        return new ResponseEntity(propertyRepository.findByCityAndNumberOfGuests(city, numOfGuests), HttpStatus.OK);
+        return new ResponseEntity(propertyRepository.findByCityAndNumOfGuests(city, numOfGuests), HttpStatus.OK);
     }
 
     @GetMapping(value = "/properties/cityandrating")

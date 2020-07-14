@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HostRepository extends JpaRepository<Host, Long> {
 
-    Host findByHostUserNameAndPassword(String hostUserName, String hostPassword);
+    Host findByHostUserNameAndHostPassword(String hostUserName, String hostPassword);
 }

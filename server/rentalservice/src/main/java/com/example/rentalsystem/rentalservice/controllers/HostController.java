@@ -26,10 +26,10 @@ public class HostController {
     }
 
     @GetMapping(value = "/hosts/login")
-    public ResponseEntity findByHostUserNameAndPassword(
+    public ResponseEntity findByHostUserNameAndHostPassword(
             @RequestParam(name = "hostUserName") String hostUserName,
             @RequestParam(name = "hostPassword") String hostPassword){
-        return new ResponseEntity(hostRepository.findByHostUserNameAndPassword(hostUserName, hostPassword), HttpStatus.OK);
+        return new ResponseEntity(hostRepository.findByHostUserNameAndHostPassword(hostUserName, hostPassword), HttpStatus.OK);
     }
 
     @PostMapping(value = "/hosts")

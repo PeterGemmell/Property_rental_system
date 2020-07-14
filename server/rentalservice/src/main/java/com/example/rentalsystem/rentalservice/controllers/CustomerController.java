@@ -26,10 +26,10 @@ public class CustomerController {
     }
 
     @GetMapping(value = "/customers/login")
-    public ResponseEntity findByCustomerUserNameAndPassword(
+    public ResponseEntity findByCustomerUserNameAndCustomerPassword(
             @RequestParam(name = "customerUserName") String customerUserName,
             @RequestParam(name = "customerPassword") String customerPassword){
-        return new ResponseEntity(customerRepository.findByCustomerUserNameAndPassword(customerUserName, customerPassword), HttpStatus.OK);
+        return new ResponseEntity(customerRepository.findByCustomerUserNameAndCustomerPassword(customerUserName, customerPassword), HttpStatus.OK);
     }
 
     @PostMapping(value = "/customers")
