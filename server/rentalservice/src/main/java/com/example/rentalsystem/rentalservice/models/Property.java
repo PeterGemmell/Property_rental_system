@@ -156,4 +156,5 @@ public class Property {
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
     }
+
 }

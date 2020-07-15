@@ -83,6 +83,25 @@ class RentalserviceApplicationTests {
 
 	@Test
 	public void canDeletePropertyFromSite(){
+		Property property1 = new Property("France", "Cannes", "Apartment", 4, 2, "Croisette, LE MIRAMAR, located between Le MARTINEZ and Le CARLTON, This luxury residence will allow you the time of a weekend or a few weeks, to discover our French Riviera in the heart of the City of CANNES.", 4, 179.00, "https://a0.muscache.com/im/pictures/75420856/eac8efbb_original.jpg?im_w=1200", bob);
+		propertyRepository.delete(property1);
+	}
 
+	@Test
+	public void canDeleteCustomerFromSite(){
+		Customer customer1 = new Customer("Peter", "Gemmell", "PeteG", "07870988635", "petergemmell65@hotmail.com", "Howdy22$");
+		customerRepository.delete(customer1);
+	}
+
+	@Test
+	public void canDeleteHostFromSite(){
+		Host host1 = new Host("Bob", "Smith", "07845234562", "bob@bobsmith.com", "HeyItsBob", "Bob123");
+		hostRepository.delete(host1);
+	}
+
+	@Test
+	public void canRemoveBookingFromSite(){
+		Booking booking1 = new Booking("no", "BZ5423WE1", peter, flat);
+		bookingRepository.delete(booking1);
 	}
 }
