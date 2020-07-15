@@ -38,11 +38,14 @@ class RentalserviceApplicationTests {
 	public void before() {
 		peter = new Customer("Peter", "Gemmell", "PeteG", "07870988635", "petergemmell65@hotmail.com", "Howdy22$");
 		customerRepository.save(peter);
+
 		bob = new Host("Bob", "Smith", "07845234562", "bob@bobsmith.com", "HeyItsBob", "Bob123");
 		hostRepository.save(bob);
+
 		flat = new Property("France", "Cannes", "Apartment", 4, 2, "Croisette, LE MIRAMAR, located between Le MARTINEZ and Le CARLTON, This luxury residence will allow you the time of a weekend or a few weeks, to discover our French Riviera in the heart of the City of CANNES.", 4, 179.00, "https://a0.muscache.com/im/pictures/75420856/eac8efbb_original.jpg?im_w=1200", bob);
 		propertyRepository.save(flat);
-		booking = new Booking("Peter Gemmell", "no", "BZ5423WE1", peter, flat);
+
+		booking = new Booking("no", "BZ5423WE1", peter, flat);
 	}
 
 	@Test
@@ -75,6 +78,11 @@ class RentalserviceApplicationTests {
 //		hostRepository.save(host1);
 //		Property property1 = new Property("France", "Cannes", "Apartment", 4, 2, "Croisette, LE MIRAMAR, located between Le MARTINEZ and Le CARLTON, This luxury residence will allow you the time of a weekend or a few weeks, to discover our French Riviera in the heart of the City of CANNES.", 4, 179.00, "https://a0.muscache.com/im/pictures/75420856/eac8efbb_original.jpg?im_w=1200", host1);
 //		propertyRepository.save(property1);
-		Booking booking1 = new Booking("Peter Gemmell", "no", "BZ5423WE1", peter, flat);
+		Booking booking1 = new Booking("no", "BZ5423WE1", peter, flat);
+	}
+
+	@Test
+	public void canDeletePropertyFromSite(){
+
 	}
 }

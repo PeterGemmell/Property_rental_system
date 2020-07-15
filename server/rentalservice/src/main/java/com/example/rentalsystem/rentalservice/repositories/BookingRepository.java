@@ -8,5 +8,5 @@ import java.time.LocalDate;
 public interface BookingRepository extends JpaRepository<Booking, Long> {
 
 
-    Booking findByCustomerNameAndBookingReference( String customerName, String bookingReference);
+    Booking findByBookingReference(String bookingReference);
 }
