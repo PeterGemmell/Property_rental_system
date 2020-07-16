@@ -33,6 +33,7 @@ class RentalserviceApplicationTests {
 	Property flat;
 	Booking booking;
 
+//	Annotating a public void method with @Before causes that method to be run before the Test method.
 
 	@Before
 	public void before() {
@@ -51,6 +52,9 @@ class RentalserviceApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+
+//	JUnit provides an annotation called @Test, which tells the JUnit that the public void method in
+//	which it is used can run as a test case.
 
 	@Test
 	public void canSaveCustomerDetailsToSite(){

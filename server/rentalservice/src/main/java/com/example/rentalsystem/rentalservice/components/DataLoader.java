@@ -13,6 +13,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+
+// Spring Component annotation is used to denote a class as Component.
+// It means that Spring framework will autodetect these classes for dependency injection
+// when annotation-based configuration and classpath scanning is used.
+
+// Application Runner is an interface used to execute the code after the Spring Boot application started.
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -30,6 +37,8 @@ public class DataLoader implements ApplicationRunner {
 
     public DataLoader(){
     }
+
+
 
     public void run(ApplicationArguments args){
 
