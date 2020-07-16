@@ -57,6 +57,9 @@ public class DataLoader implements ApplicationRunner {
         Property property4 = new Property("Spain", "Madrid", "Apartment", 8, 3, "All rooms have AC, Internet, fully equipped kitchen, SMART TV with Netflix.", 4, 117.00, "https://a0.muscache.com/im/pictures/d3c25204-fe8d-448b-8aff-4c6788310b09.jpg?im_w=1200", host3);
         propertyRepository.save(property4);
 
+        Property property5 = new Property("Brazil", "Rio De Janeiro", "Apartment", 4, 2, "My space is close to Cinema Roxy, Boteco Belmonte, Boulangerie Guerin, Devassa Copacabana and Bar Boteco Belmonte.", 2, 35.00, "https://a0.muscache.com/im/pictures/9585c815-be0e-410a-906a-2f2601bf820b.jpg?im_w=1200", host2);
+        propertyRepository.save(property5);
+
 
         Booking booking1 = new Booking("no", "BZ5423WE1", customer1, property1);
         bookingRepository.save(booking1);

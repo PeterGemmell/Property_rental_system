@@ -40,11 +40,15 @@ public class PropertyController {
         return new ResponseEntity(propertyRepository.findByCityAndNumOfGuests(city, numOfGuests), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/properties/cityandrating")
-    public ResponseEntity findByCityAndRating(
-            @RequestParam(name = "city") String city,
-            @RequestParam(name = "rating") Integer rating){
-        return new ResponseEntity(propertyRepository.findByCityAndRating(city, rating), HttpStatus.OK);
+    @GetMapping(value = "/properties/rating")
+    public ResponseEntity getByRatingGreaterThanEqualAndRatingLessThanEqual(
+            @RequestParam(required = false, name = "ratingGreater") Integer ratingGreater,
+            @RequestParam(required = false, name = "ratingLess" ) Integer ratingLess
+    ){
+        if (ratingGreater != null && ratingLess != null) {
+            return new ResponseEntity(propertyRepository.findByRatingGreaterThanEqualAndRatingLessThanEqual(ratingGreater, ratingLess), HttpStatus.OK);
+        }
+        return new ResponseEntity(propertyRepository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/properties/cityandprice")

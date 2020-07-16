@@ -11,7 +11,7 @@ public interface PropertyRepository extends JpaRepository<Property, Long> {
 
     Property findByCityAndNumOfGuests(String city, Integer numOfGuests);
 
-    Property findByCityAndRating(String city, Integer rating);
+    Property findByRatingGreaterThanEqualAndRatingLessThanEqual(Integer ratingGreater, Integer ratingLess);
 
     Property findByCityAndPricePerNight(String city, Double pricePerNight);
 }

@@ -27,9 +27,12 @@ public class BookingController {
 
     @GetMapping(value= "/bookings/bookingreference")
     public ResponseEntity findByBookingReference(
-            @RequestParam(name = "customerName") String customerName,
-            @RequestParam(name = "bookingReference") String bookingReference){
-        return new ResponseEntity(bookingRepository.findByBookingReference(bookingReference), HttpStatus.OK);
+            @RequestParam(name = "bookingReference", required = false) String bookingReference){
+        if(bookingReference != null){
+            return new ResponseEntity(bookingRepository.findByBookingReference(bookingReference), HttpStatus.OK);
+        }
+        return new ResponseEntity(bookingRepository.findAll(), HttpStatus.OK);
+
     }
 
     @PostMapping(value = "/bookings")
